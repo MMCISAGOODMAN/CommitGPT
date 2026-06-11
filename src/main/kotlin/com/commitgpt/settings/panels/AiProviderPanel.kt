@@ -121,18 +121,18 @@ class AiProviderPanel(private val project: Project) : JPanel(BorderLayout()) {
                     Messages.showInfoMessage(
                         project,
                         "连接成功！\n响应: ${response.take(100)}",
-                        "CommitGPT",
+                        "CommitGPT Assistant",
                     )
                 }
             } catch (e: AiServiceException) {
                 javax.swing.SwingUtilities.invokeLater {
                     resetTestButton()
-                    Messages.showErrorDialog(project, e.message ?: "连接失败", "CommitGPT")
+                    Messages.showErrorDialog(project, e.message ?: "连接失败", "CommitGPT Assistant")
                 }
             } catch (e: Exception) {
                 javax.swing.SwingUtilities.invokeLater {
                     resetTestButton()
-                    Messages.showErrorDialog(project, "连接失败: ${e.message}", "CommitGPT")
+                    Messages.showErrorDialog(project, "连接失败: ${e.message}", "CommitGPT Assistant")
                 }
             }
         }.start()

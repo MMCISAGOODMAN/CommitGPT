@@ -2,11 +2,11 @@
 
 **Last updated:** June 11, 2026
 
-CommitGPT is an IntelliJ IDEA plugin that helps you generate Git commit messages using AI services you configure.
+CommitGPT Assistant is an IntelliJ IDEA plugin that helps you generate Git commit messages using AI services you configure.
 
 ## Data Collection by the Plugin Author
 
-CommitGPT **does not** collect, store, or transmit any personal data to the plugin author or any third party controlled by the plugin author.
+CommitGPT Assistant **does not** collect, store, or transmit any personal data to the plugin author or any third party controlled by the plugin author.
 
 All configuration (API keys, templates, preferences) is stored **locally** on your machine using IntelliJ's `PropertiesComponent`.
 

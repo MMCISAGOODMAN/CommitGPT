@@ -28,14 +28,14 @@ IntelliJ IDEA plugin that generates Git commit messages from staged diffs using 
 
 ### Installation
 
-Search **CommitGPT** in **Settings → Plugins**, or install from [JetBrains Marketplace](https://plugins.jetbrains.com).
+Search **CommitGPT Assistant** in **Settings → Plugins**, or install from [JetBrains Marketplace](https://plugins.jetbrains.com).
 
 Manual install: build with `gradle buildPlugin`, then **Settings → Plugins → Install Plugin from Disk**.
 
 ### Quick Start
 
-1. **Settings → Tools → CommitGPT → AI Configuration** — configure provider and API key
-2. **Settings → Tools → CommitGPT → Template Management** — create templates (optional)
+1. **Settings → Tools → CommitGPT Assistant → AI Configuration** — configure provider and API key
+2. **Settings → Tools → CommitGPT Assistant → Template Management** — create templates (optional)
 3. Stage changes, open the **Commit** tool window
 4. Select work mode and template in the **AI Commit Assistant** panel
 5. Click **Analyze Changes and Generate**, review, and confirm
@@ -78,7 +78,7 @@ Staged diffs are sent only to the AI provider you configure. See [PRIVACY.md](PR
 
 ### 使用
 
-1. **Settings → Tools → CommitGPT** 配置 AI 与模板
+1. **Settings → Tools → CommitGPT Assistant** 配置 AI 与模板
 2. Stage 变更，打开 **Commit** 窗口
 3. 选择模式和模板，点击 **分析变更并生成**
 4. 预览确认后填入 commit 消息

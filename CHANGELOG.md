@@ -4,6 +4,10 @@ All notable changes to CommitGPT will be documented in this file.
 
 ## [1.0.0] - 2026-06-11
 
+### Changed
+
+- Marketplace display name set to **CommitGPT Assistant** to avoid conflict with the deprecated [CommitGPT](https://plugins.jetbrains.com/plugin/21412-commitgpt) plugin
+
 ### Added
 
 - AI-powered commit message generation from staged Git diffs

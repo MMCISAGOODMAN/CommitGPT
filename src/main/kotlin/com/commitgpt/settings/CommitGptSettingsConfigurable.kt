@@ -7,7 +7,7 @@ import javax.swing.JComponent
 class CommitGptSettingsConfigurable(private val project: Project) : Configurable {
     private var component: CommitGptSettingsComponent? = null
 
-    override fun getDisplayName(): String = "CommitGPT"
+    override fun getDisplayName(): String = "CommitGPT Assistant"
 
     override fun createComponent(): JComponent {
         component = CommitGptSettingsComponent(project).also {

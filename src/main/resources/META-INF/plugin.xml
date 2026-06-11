@@ -1,10 +1,10 @@
 <idea-plugin>
     <id>com.commitgpt</id>
-    <name>CommitGPT</name>
+    <name>CommitGPT Assistant</name>
     <vendor email="mmcisagoodman@users.noreply.github.com" url="https://github.com/MMCISAGOODMAN/CommitGPT">MMCISAGOODMAN</vendor>
 
     <description><![CDATA[
-<p>CommitGPT generates Git commit messages from your staged changes using AI.</p>
+<p>CommitGPT Assistant generates Git commit messages from your staged changes using AI.</p>
 
 <p><b>Features</b></p>
 <ul>
@@ -20,7 +20,7 @@
 <ol>
   <li>Stage your changes in Git</li>
   <li>Open the Commit tool window</li>
-  <li>Configure your AI provider under <b>Settings → Tools → CommitGPT</b></li>
+  <li>Configure your AI provider under <b>Settings → Tools → CommitGPT Assistant</b></li>
   <li>Click <b>Analyze Changes and Generate</b></li>
   <li>Review, edit, and confirm the generated message</li>
 </ol>
@@ -53,7 +53,7 @@
                 parentId="tools"
                 provider="com.commitgpt.settings.CommitGptSettingsConfigurableProvider"
                 id="com.commitgpt.settings"
-                displayName="CommitGPT"/>
+                displayName="CommitGPT Assistant"/>
     </extensions>
 
     <actions>

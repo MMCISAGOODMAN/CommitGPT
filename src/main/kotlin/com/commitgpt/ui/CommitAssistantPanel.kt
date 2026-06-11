@@ -101,7 +101,7 @@ class CommitAssistantPanel(
             isOpaque = false
             border = JBUI.Borders.emptyBottom(10)
             add(
-                JBLabel("CommitGPT").apply {
+                JBLabel("CommitGPT Assistant").apply {
                     icon = AllIcons.General.Modified
                     font = font.deriveFont(java.awt.Font.BOLD, font.size + 1f)
                 },
@@ -158,7 +158,7 @@ class CommitAssistantPanel(
             generateButton.preferredSize = Dimension(160, generateButton.preferredSize.height)
             settingsButton.isBorderPainted = false
             settingsButton.isContentAreaFilled = false
-            settingsButton.toolTipText = "打开 CommitGPT 设置"
+            settingsButton.toolTipText = "打开 CommitGPT Assistant 设置"
             generateButton.addActionListener { onGenerateClicked() }
             settingsButton.addActionListener { openSettings() }
             add(generateButton)
@@ -275,7 +275,7 @@ class CommitAssistantPanel(
             Messages.showWarningDialog(
                 project,
                 "请先在设置中创建自定义模板。",
-                "CommitGPT",
+                "CommitGPT Assistant",
             )
             return
         }
@@ -286,7 +286,7 @@ class CommitAssistantPanel(
                 val result = Messages.showYesNoDialog(
                     project,
                     "你创建了含 {fixed:...} 的自定义模板，但当前是「预设模板」模式，将使用 Conventional 格式。\n\n是否切换到「自定义模板」模式？",
-                    "CommitGPT",
+                    "CommitGPT Assistant",
                     Messages.getQuestionIcon(),
                 )
                 if (result == Messages.YES) {
@@ -316,7 +316,7 @@ class CommitAssistantPanel(
             onError = { error ->
                 SwingUtilities.invokeLater {
                     resetGenerateButton()
-                    Messages.showErrorDialog(project, error, "CommitGPT 错误")
+                    Messages.showErrorDialog(project, error, "CommitGPT Assistant 错误")
                 }
             },
         )
@@ -366,7 +366,7 @@ class CommitPreviewDialog(
     private val messageArea = JBTextArea(generatedMessage, 12, 72)
 
     init {
-        title = "CommitGPT — 预览生成结果"
+        title = "CommitGPT Assistant — 预览生成结果"
         init()
     }
 

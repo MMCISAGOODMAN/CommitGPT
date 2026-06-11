@@ -26,7 +26,7 @@ class CommitGeneratorService(private val project: Project) {
     ) {
         ProgressManager.getInstance().run(object : Task.Backgroundable(
             project,
-            "CommitGPT: 正在分析变更并生成 commit 消息...",
+            "CommitGPT Assistant: 正在分析变更并生成 commit 消息...",
             true,
         ) {
             override fun run(indicator: ProgressIndicator) {

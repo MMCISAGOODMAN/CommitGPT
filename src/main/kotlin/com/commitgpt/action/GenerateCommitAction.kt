@@ -25,7 +25,7 @@ class GenerateCommitAction : AnAction(), DumbAware {
             Messages.showInfoMessage(
                 project,
                 "请在 Commit 窗口中使用 AI Commit Assistant 面板生成 commit 消息。\n快捷键: Ctrl+Alt+G",
-                "CommitGPT",
+                "CommitGPT Assistant",
             )
             return
         }
@@ -50,7 +50,7 @@ class GenerateCommitAction : AnAction(), DumbAware {
             },
             onError = { error ->
                 SwingUtilities.invokeLater {
-                    Messages.showErrorDialog(project, error, "CommitGPT 错误")
+                    Messages.showErrorDialog(project, error, "CommitGPT Assistant 错误")
                 }
             },
         )
