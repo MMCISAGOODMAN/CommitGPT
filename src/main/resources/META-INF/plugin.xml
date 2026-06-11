@@ -1,0 +1,68 @@
+<idea-plugin>
+    <id>com.commitgpt</id>
+    <name>CommitGPT</name>
+    <vendor email="mmcisagoodman@users.noreply.github.com" url="https://github.com/MMCISAGOODMAN/CommitGPT">MMCISAGOODMAN</vendor>
+
+    <description><![CDATA[
+<p>CommitGPT generates Git commit messages from your staged changes using AI.</p>
+
+<p><b>Features</b></p>
+<ul>
+  <li><b>Three modes:</b> preset templates, custom templates, or free-form AI generation</li>
+  <li><b>Conventional Commits:</b> built-in templates with type, scope, subject, body, and footer</li>
+  <li><b>Custom templates:</b> variables like <code>{fixed:TICKET-123}</code>, <code>{subject}</code>, <code>{type}</code></li>
+  <li><b>Multiple AI providers:</b> OpenAI, Qwen, DeepSeek, Ollama, or any compatible API</li>
+  <li><b>Commit dialog integration:</b> AI assistant panel above the commit message field</li>
+  <li><b>Keyboard shortcut:</b> <code>Ctrl+Alt+G</code> (macOS: <code>⌃⌥G</code>)</li>
+</ul>
+
+<p><b>How to use</b></p>
+<ol>
+  <li>Stage your changes in Git</li>
+  <li>Open the Commit tool window</li>
+  <li>Configure your AI provider under <b>Settings → Tools → CommitGPT</b></li>
+  <li>Click <b>Analyze Changes and Generate</b></li>
+  <li>Review, edit, and confirm the generated message</li>
+</ol>
+
+<p><b>Privacy note:</b> Staged diffs are sent only to the AI provider you configure. See <a href="https://github.com/MMCISAGOODMAN/CommitGPT/blob/main/PRIVACY.md">Privacy Policy</a>.</p>
+    ]]></description>
+
+    <change-notes><![CDATA[
+<p><b>1.0.0</b></p>
+<ul>
+  <li>Initial release</li>
+  <li>AI commit message generation from staged Git diffs</li>
+  <li>Preset and custom template support with Conventional Commits</li>
+  <li>OpenAI, Qwen, DeepSeek, Ollama, and custom API providers</li>
+  <li>Commit dialog panel and <code>Ctrl+Alt+G</code> shortcut</li>
+</ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>Git4Idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <projectService serviceImplementation="com.commitgpt.settings.CommitGptSettings"/>
+        <projectService serviceImplementation="com.commitgpt.git.GitDiffService"/>
+        <projectService serviceImplementation="com.commitgpt.ai.AiService"/>
+
+        <checkinHandlerFactory implementation="com.commitgpt.ui.CommitGptCheckinHandlerFactory"/>
+
+        <projectConfigurable
+                parentId="tools"
+                provider="com.commitgpt.settings.CommitGptSettingsConfigurableProvider"
+                id="com.commitgpt.settings"
+                displayName="CommitGPT"/>
+    </extensions>
+
+    <actions>
+        <action id="CommitGPT.GenerateCommit"
+                class="com.commitgpt.action.GenerateCommitAction"
+                text="Generate Commit Message"
+                description="Analyze staged changes and generate commit message with AI">
+            <add-to-group group-id="Vcs.MessageActionGroup" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt G"/>
+        </action>
+    </actions>
+</idea-plugin>

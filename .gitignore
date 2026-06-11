@@ -1,0 +1,16 @@
+.gradle/
+build/
+out/
+.idea/
+.intellijPlatform/
+*.iml
+*.ipr
+*.iws
+.DS_Store
+
+# Local publish credentials — never commit
+gradle.properties.local
+local.properties
+
+# Generated assets (source PNG kept in .cursor if needed)
+assets/

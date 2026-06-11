@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="16" y1="8" x2="112" y2="120" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1E1E2E"/>
+      <stop offset="1" stop-color="#2A2A3E"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="32" y1="24" x2="96" y2="104" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4ECDC4"/>
+      <stop offset="1" stop-color="#7C6FF7"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <!-- Git branch lines -->
+  <path d="M44 88 L44 56" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M44 56 L76 56" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M76 56 L76 40" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <path d="M44 56 L44 40" stroke="url(#accent)" stroke-width="6" stroke-linecap="round"/>
+  <!-- Git nodes -->
+  <circle cx="44" cy="88" r="10" fill="#4ECDC4"/>
+  <circle cx="44" cy="56" r="10" fill="#5ED9D0"/>
+  <circle cx="44" cy="40" r="10" fill="#7C6FF7"/>
+  <circle cx="76" cy="40" r="10" fill="#7C6FF7"/>
+  <!-- AI sparkle -->
+  <path d="M92 78 L94 86 L102 88 L94 90 L92 98 L90 90 L82 88 L90 86 Z" fill="#FFD166"/>
+  <path d="M98 62 L99 66 L103 67 L99 68 L98 72 L97 68 L93 67 L97 66 Z" fill="#4ECDC4" opacity="0.9"/>
+  <!-- Commit message lines -->
+  <rect x="24" y="100" width="48" height="4" rx="2" fill="#4ECDC4" opacity="0.5"/>
+  <rect x="24" y="108" width="32" height="4" rx="2" fill="#7C6FF7" opacity="0.4"/>
+</svg>
