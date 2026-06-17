@@ -12,5 +12,6 @@ out/
 gradle.properties.local
 local.properties
 
-# Generated assets (source PNG kept in .cursor if needed)
+# Generated / local assets
 assets/
+article/

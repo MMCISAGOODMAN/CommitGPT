@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.commitgpt"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -31,7 +31,7 @@ intellijPlatform {
     pluginConfiguration {
         ideaVersion {
             sinceBuild = "233"
-            untilBuild = "243.*"
+            untilBuild = provider { null }
         }
     }
 

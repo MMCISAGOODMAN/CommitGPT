@@ -1,5 +1,6 @@
-# CommitGPT
+# CommitGPT Assistant
 
+[![Version](https://img.shields.io/badge/version-1.0.1-blue)](CHANGELOG.md)
 [![JetBrains Marketplace](https://img.shields.io/badge/JetBrains-Marketplace-blue)](https://plugins.jetbrains.com/plugin/PLACEHOLDER)
 [![GitHub](https://img.shields.io/badge/GitHub-MMCISAGOODMAN%2FCommitGPT-blue?logo=github)](https://github.com/MMCISAGOODMAN/CommitGPT)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
@@ -22,7 +23,7 @@ IntelliJ IDEA plugin that generates Git commit messages from staged diffs using 
 
 ### Requirements
 
-- IntelliJ IDEA 2023.3+ (build 233+)
+- IntelliJ IDEA **2023.3+** (build 233+), including **2025.x** and **2026.x**
 - Git plugin (bundled)
 - API key for your AI provider, or local Ollama
 
@@ -30,7 +31,14 @@ IntelliJ IDEA plugin that generates Git commit messages from staged diffs using 
 
 Search **CommitGPT Assistant** in **Settings → Plugins**, or install from [JetBrains Marketplace](https://plugins.jetbrains.com).
 
-Manual install: build with `gradle buildPlugin`, then **Settings → Plugins → Install Plugin from Disk**.
+Manual install: download [Release ZIP](https://github.com/MMCISAGOODMAN/CommitGPT/releases) or build locally:
+
+```bash
+gradle buildPlugin
+# → build/distributions/CommitGPT-1.0.1.zip
+```
+
+Then **Settings → Plugins → Install Plugin from Disk**.
 
 ### Quick Start
 
@@ -50,11 +58,43 @@ Manual install: build with `gradle buildPlugin`, then **Settings → Plugins →
 
 Example: `{fixed:ARTCORE-3232}: {subject}` → `ARTCORE-3232: add login validation`
 
-### Build
+### Development
+
+Prerequisites: **JDK 17+**, **Gradle** (no wrapper in repo).
 
 ```bash
+# Run sandbox IDE with plugin loaded
+gradle runIde
+
+# Build distributable ZIP
 gradle buildPlugin
+
+# Verify compatibility (downloads multiple IDE versions, needs ~10GB disk)
+gradle verifyPlugin
 ```
+
+### Publish to JetBrains Marketplace
+
+1. Create a [JetBrains Marketplace](https://plugins.jetbrains.com) account and plugin listing (**CommitGPT Assistant**)
+2. Generate a [Permanent Token](https://plugins.jetbrains.com/author/me/tokens) → set as `PUBLISH_TOKEN`
+3. (Recommended) Configure [plugin signing](https://plugins.jetbrains.com/docs/markplace/plugin-signing.html) via `CERTIFICATE_CHAIN`, `PRIVATE_KEY`, `PRIVATE_KEY_PASSWORD`
+4. Publish:
+
+```bash
+export PUBLISH_TOKEN=your-token
+gradle publishPlugin
+```
+
+Or put credentials in `gradle.properties.local` (gitignored):
+
+```properties
+PUBLISH_TOKEN=...
+CERTIFICATE_CHAIN=...
+PRIVATE_KEY=...
+PRIVATE_KEY_PASSWORD=...
+```
+
+**Compatibility:** `since-build=233`, no `until-build` (supports all future IDEA versions).
 
 ### Privacy
 
@@ -75,6 +115,28 @@ Staged diffs are sent only to the AI provider you configure. See [PRIVACY.md](PR
 - **多 AI 提供商**：OpenAI、通义千问、DeepSeek、Ollama、自定义
 - **Commit 窗口集成**：AI 助手面板
 - **快捷键**：`Ctrl+Alt+G`
+
+### 环境要求
+
+- IntelliJ IDEA **2023.3+**（build 233+），含 **2025 / 2026** 最新版
+
+### 安装
+
+Marketplace 搜索 **CommitGPT Assistant**，或从 [GitHub Releases](https://github.com/MMCISAGOODMAN/CommitGPT/releases) 下载 ZIP 手动安装。
+
+### 本地开发
+
+```bash
+gradle runIde        # 启动带插件的 sandbox IDEA
+gradle buildPlugin   # 打包 ZIP
+```
+
+### 发布到插件中心
+
+```bash
+export PUBLISH_TOKEN=你的令牌
+gradle publishPlugin
+```
 
 ### 使用
 
